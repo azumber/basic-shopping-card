@@ -3,13 +3,16 @@
         <div class="m-5 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div class="md:flex">
                 <div class="md:flex-shrink-0">
-                    <img class="h-48 w-full object-cover md:w-48" src="/img/store.jpg" alt="Man looking at item at a store">
+                    <img class="h-48 w-full w-48 mt-5 ml-3 p-5" :src="imgSrc" style="float: left; width:100%; heigth: 100%; object-fit: cover;">
                 </div>
                 <div class="p-8">
-                    <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-                    <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-                    <p class="mt-2 text-gray-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
-                    <button class="btn-indigo">Add to List</button>
+                    <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ category }}</div>
+                    <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{ productName }}</a>
+                    <p class="mt-2 text-gray-500">{{ desc }}</p>
+                    <div class="flex justify-between">
+                        <p class="mt-3 px-1 py-1 block text-lg leading-tight font-medium text-black hover:underline"><span>$</span>{{ price }}</p>
+                        <button class="btn-indigo">Add to List</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,7 +21,8 @@
 
 <script>
 export default {
-    
+    name: 'Card',
+    props: ['productName','imgSrc','price','category','desc']
 }
 </script>
 

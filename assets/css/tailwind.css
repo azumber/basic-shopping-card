@@ -9,5 +9,21 @@
 }
 
 body {
-    background: darkgray;
+    background: white;
+}
+nav{
+    background: #3F3351;
+}
+
+#basket{
+    border: none;
+    background-color: #1F1D36;
+}
+
+#basket:active{
+    outline: none;
+    color: white;
+    background-color: #1F1D36;
+    box-shadow: 1px 1px 3px 1px rgba(0.2, 0.2, 0.1, 0.2);
+    transform: translateY(4px);
 }
