@@ -11,7 +11,7 @@
                     <p class="mt-2 text-gray-500">{{ desc }}</p>
                     <div class="flex justify-between">
                         <p class="mt-3 px-1 py-1 block text-lg leading-tight font-medium text-black hover:underline"><span>$</span>{{ price }}</p>
-                        <button class="btn-indigo">Add to List</button>
+                        <button @click="add" class="btn-indigo">Add to List</button>
                     </div>
                 </div>
             </div>
@@ -26,6 +26,11 @@ export default {
     data (){
         return{
             
+        }
+    },
+    methods:{
+        add(){
+            this.$emit('add')
         }
     }
 }

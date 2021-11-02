@@ -11,6 +11,7 @@
       :price="item.price"
       :desc="item.description"
       :category="item.category"
+      @add="addToList"
       />
     </div>
   </div>
@@ -26,6 +27,12 @@ export default {
       count: 0
     }
   },
+  methods:{
+    addToList(){
+      this.count += 1
+      console.log(this.count)
+    }
+  }
 }
 </script>
 
