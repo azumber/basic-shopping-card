@@ -1,0 +1,15 @@
+{
+    "Products": [
+        {
+            "id" : 1,
+            "productName" : "Apple Macbook Pro 13",
+            "img" : "https://m.media-amazon.com/images/I/714bJ14U6-L._AC_SL1500_.jpg",
+            "price" : 20000,
+            "category" : "Technology",
+            "description" : "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray"
+        },
+        {
+
+        }
+    ]
+}
