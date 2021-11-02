@@ -3,7 +3,7 @@
         <div class="m-5 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div class="md:flex">
                 <div class="md:flex-shrink-0">
-                    <img class="h-48 w-full w-48 mt-5 ml-3 p-5" :src="imgSrc" style="float: left; width:100%; heigth: 100%; object-fit: cover;">
+                    <img class="h-48 w-full w-48 mt-5 ml-3 p-5" :src="imgSrc" style="float: left; width:auto; heigth: auto; object-fit: cover; overflow: none;">
                 </div>
                 <div class="p-8">
                     <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ category }}</div>
