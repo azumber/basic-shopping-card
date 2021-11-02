@@ -5,25 +5,27 @@
 
 
 .btn-indigo {
-    @apply mt-3 px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2;
+    @apply mt-3 px-4 py-1 text-sm text-purple-900 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2;
+
 }
 
 body {
     background: white;
 }
 nav{
-    background: #3F3351;
+    background: #1F1D36;
 }
-
+#card{
+    box-shadow: 1px 1px 3px 1px rgba(0.2, 0.2, 0.1, 0.2);
+}
 #basket{
     border: none;
-    background-color: #1F1D36;
+    background-color: #3F3351;
 }
-
 #basket:active{
     outline: none;
     color: white;
-    background-color: #1F1D36;
+    background-color: #3F3351;
     box-shadow: 1px 1px 3px 1px rgba(0.2, 0.2, 0.1, 0.2);
     transform: translateY(4px);
 }

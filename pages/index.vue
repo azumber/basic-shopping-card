@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar/>
-    <div class="grid grid-rows-3 grid-flow-col">
+    <Navbar :productCount=count />
+    <div class="grid grid-rows-3 grid-flow-col mt-5">
       <Card 
       class="pt-2 -m-3.5"
       v-for="item in this.productList.Products" 
@@ -22,12 +22,8 @@ import Products from '../static/Products.json'
 export default {
   data(){
     return{
-      productList: Products
-    }
-  },
-  methods:{
-    getProducts() {
-      console.log(this.productList.Products[0])
+      productList: Products,
+      count: 0
     }
   },
 }

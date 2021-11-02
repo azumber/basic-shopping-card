@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="m-5 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div id="card" class="m-5 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-5">
             <div class="md:flex">
                 <div class="md:flex-shrink-0">
                     <img class="h-48 w-full w-48 mt-5 ml-3 p-5" :src="imgSrc" style="float: left; width:auto; heigth: auto; object-fit: cover; overflow: none;">
@@ -22,7 +22,12 @@
 <script>
 export default {
     name: 'Card',
-    props: ['productName','imgSrc','price','category','desc']
+    props: ['productName','imgSrc','price','category','desc'],
+    data (){
+        return{
+            
+        }
+    }
 }
 </script>
 
