@@ -32,6 +32,7 @@ describe('Navbar', () => {
 
 
 describe('Navbar', () => {
+
   test('Product page routing from navbar is succesfull', () => {
     const wrapper = mount(Navbar, {
       stubs:{
@@ -41,5 +42,12 @@ describe('Navbar', () => {
     // <nuxt-link/> component has 'to' property? 
     expect(wrapper.findComponent(RouterLinkStub).props().to).toBe('/')
   })
+
+  test('Basket page routing from navbar is succesfull',() => {
+    const wrapper = mount(Navbar)
+    const link = wrapper.find('a').props.ref
+    expect(link).toBe('bask')
+  })
+
 });
 
