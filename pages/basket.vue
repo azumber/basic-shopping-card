@@ -18,16 +18,16 @@
 						<tr v-for="item of productsInBasket" :key="item.id">
 							<td>{{ item.productName }}</td>
                             <td>{{ item.category }}</td>
-                            <td>{{ item.price }}</td>
+                            <td>{{ item.price }}</td> 
                             <td>{{ item.quantity }}</td>
-                            <td><input type="number" id="tentacles" name="tentacles" min="1" max="100" value=quantity></td>
+                            <button @click="addOneMore(item.id)" class="bg-white hover:bg-green-100 text-green-800 font-semibold py-2 px-2 border border-gray-200 rounded shadow m-2">+</button>
                             <button class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow m-2">X</button>
 						</tr>	
 					</tbody>
                     <br>
 				</table>	
 			</div>
-            <button @click="fetchData" class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow mt-3">Empty the Basket</button>
+            <button @click="removeAll" class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow mt-3">Empty the Basket</button>
 			<!--/Card-->
       </div>
       <!--/container-->
@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import home from './index.vue'
 
 export default {
     name: 'basket',
@@ -45,8 +44,17 @@ export default {
         }
     },
     methods:{ 
-        fetchData(){
-            
+        removeAll(){
+            this.productsInBasket = null
+        },
+        addOneMore(itemID){
+            this.productsInBasket.forEach(product => {
+                if (product.id == itemID) {
+                    product.quantity += 1
+                    product.price = product.quantity * product.price
+                }
+            })
+            console.log(itemID)
         }
     },
     mounted(){
