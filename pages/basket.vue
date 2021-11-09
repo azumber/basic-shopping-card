@@ -15,10 +15,11 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
+						<tr v-for="item of productsInBasket" :key="item.id">
+							<td>{{ item.productName }}</td>
+                            <td>{{ item.category }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.quantity }}</td>
                             <td><input type="number" id="tentacles" name="tentacles" min="1" max="100" value=quantity></td>
                             <button class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow m-2">X</button>
 						</tr>	
@@ -45,9 +46,29 @@ export default {
     },
     methods:{ 
         fetchData(){
-            this.productsInBasket = home.data().basket
-            console.log(home.data())
+            
         }
+    },
+    mounted(){
+        if (localStorage.getItem('item1') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item1')))
+        }
+        if (localStorage.getItem('item2') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item2')))
+        }
+        if (localStorage.getItem('item3') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item3')))
+        }
+        if (localStorage.getItem('item4') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item4')))
+        }
+        if (localStorage.getItem('item5') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item5')))
+        }
+        if (localStorage.getItem('item6') != null) {
+            this.productsInBasket.push(JSON.parse(localStorage.getItem('item6')))
+        } 
+        
     }
 }
 </script>

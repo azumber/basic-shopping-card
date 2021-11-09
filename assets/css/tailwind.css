@@ -28,7 +28,17 @@ nav{
     box-shadow: 1px 1px 3px 1px rgba(0.2, 0.2, 0.1, 0.2);
     transform: translateY(4px);
 }
-
+#product{
+    border: none;
+    background-color: #3F3351;
+}
+#product:active{
+    outline: none;
+    color: white;
+    background-color: #3F3351;
+    box-shadow: 1px 1px 3px 1px rgba(0.2, 0.2, 0.1, 0.2);
+    transform: translateY(4px);
+}
 td {
     text-align: center;
 }
