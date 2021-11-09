@@ -1,5 +1,9 @@
-import { mount,RouterLinkStub } from '@vue/test-utils'
+import { mount,jest,spyOn } from '@vue/test-utils'
 import Index from '@/pages/index.vue'
+
+export default function setItem(id, newJson){
+  window.localStorage.setItem(id, JSON.stringify(newJson));
+}
 
 // Is index.vue a valid component?
 describe('Index', () => {
@@ -15,4 +19,38 @@ describe('Index', () => {
       await wrapper.vm.$nextTick()
       expect(wrapper.emitted().add.length).toBe(1)
     })
+
+    test('sets data into local storage',() => {
+      const wrapper = mount(Index);
+      const jsonId = 'item1';
+      const newJson = {
+        id: 1,
+        productName: "macbook",
+        category: "tech",
+        price: 2000,
+        quantity: 1
+      }
+      setItem(jsonId, newJson);
+      expect(localStorage.getItem(jsonId)).toEqual(JSON.stringify(newJson));
+    })
+
+    test('has data in local storage', () => {
+      const wrapper = mount(Index);
+      const jsonId = '123';
+      const newJson = {
+        id: 1,
+        productName: "macbook",
+        category: "tech",
+        price: 2000,
+        quantity: 1
+      }
+      window.localStorage.setItem(jsonId, JSON.stringify(newJson));
+      // run function
+    });
   });
+
+  afterEach(() => {
+    window.localStorage.clear();
+  });
+
+
