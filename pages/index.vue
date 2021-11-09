@@ -1,8 +1,9 @@
 <template>
   <div>
-    <Navbar :productCount=this.basket.length :currentBasket=this.basket />
+    <Navbar :productCount=this.basket.length :currentBasket=this.basket id="navb"/>
     <div class="grid grid-rows-3 grid-flow-col mt-5">
       <Card 
+      id="shop-card"
       class="pt-2 -m-3.5"
       v-for="item in this.productList.Products" 
       :key="item.id" 
@@ -29,13 +30,7 @@ export default {
   },
   methods:{
     addToList(id, name, category, price, quantity){
-      this.basket.push({
-        id: id,
-        productName: name,
-        category: category,
-        price: price,
-        quantity: quantity
-      })
+      this.basket.push({ id: id, productName: name, category: category, price: price, quantity: quantity })
       console.log(this.basket)
     }
   }
