@@ -1,5 +1,6 @@
 import { mount,RouterLinkStub } from '@vue/test-utils'
 import Navbar from '@/components/Navbar.vue'
+import assert from 'assert'
 
 // Is navbar a valid vue instance ?
 describe('Navbar', () => {
@@ -10,7 +11,7 @@ describe('Navbar', () => {
   });
   
   
-  describe('Navbar', () => {
+describe('Navbar', () => {
     test('Product page routing from navbar is succesfull', () => {
       const wrapper = mount(Navbar, {
         stubs:{
@@ -20,4 +21,19 @@ describe('Navbar', () => {
       // <nuxt-link/> component has 'to' property? 
       expect(wrapper.findComponent(RouterLinkStub).props().to).toBe('/')
     })
+});
+
+
+describe('Navbar', () => {
+  test('Basket page routing from navbar is succesfull', () => {
+    const wrapper = mount(Navbar, {
+      stubs:{
+        NuxtLink: RouterLinkStub
+      }
+    })
+    const links = wrapper.findAll(RouterLinkStub)
+    assert(links.at(1).props().to === '/')
+    // basket page routing handled
+    expect(links.at(2).props().to === '/basket')
+  })
 });
