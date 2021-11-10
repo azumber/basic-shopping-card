@@ -21,7 +21,8 @@
                             <td>{{ item.price }}</td> 
                             <td>{{ item.quantity }}</td>
                             <button @click="addOneMore(item.id)" class="bg-white hover:bg-green-100 text-green-800 font-semibold py-2 px-2 border border-gray-200 rounded shadow m-2">+</button>
-                            <button class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow m-2">X</button>
+                            <button @click="removeOne(item.id)" class="bg-white hover:bg-red-100 text-red-800 font-semibold py-2 px-2 border border-gray-200 rounded shadow m-2">-</button>
+                            <button @click="removeItem(item.id)" class="bg-white hover:bg-gray-100 text-red-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow m-2">X</button>
 						</tr>	
 					</tbody>
                     <br>
@@ -40,6 +41,7 @@ export default {
     name: 'basket',
     data(){
         return{
+            realPrice: 0,
             productsInBasket: []
         }
     },
@@ -51,10 +53,27 @@ export default {
             this.productsInBasket.forEach(product => {
                 if (product.id == itemID) {
                     product.quantity += 1
-                    product.price = product.quantity * product.price
+                    this.realPrice = product.price 
+                    product.price += this.realPrice
                 }
             })
             console.log(itemID)
+        },
+        removeOne(itemID){
+            let value = 0
+            this.productsInBasket.forEach(product => {
+                if (product.id == itemID && product.quantity == 1){
+                    this.productsInBasket = this.productsInBasket.filter(x => x.id !== product.id)
+                }
+                if (product.id == itemID && product.quantity > 1) {
+                    this.realPrice = product.price
+                    product.quantity -= 1
+                    product.price = this.realPrice + product.price
+                }
+            })
+        },
+        removeItem(itemID){
+            this.productsInBasket = this.productsInBasket.filter(product => product.id !== itemID)
         }
     },
     mounted(){
