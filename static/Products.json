@@ -5,6 +5,7 @@
             "productName" : "Apple Macbook Pro 13",
             "img" : "https://m.media-amazon.com/images/I/714bJ14U6-L._AC_SL1500_.jpg",
             "price" : 20000,
+            "unitPrice" : 20000,
             "category" : "Technology",
             "description" : "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
             "quantity": 1
@@ -14,6 +15,7 @@
             "productName" : "Clean Code: A Handbook of Agile Software Craftsmanship",
             "img" : "https://images-na.ssl-images-amazon.com/images/I/41yafGMO+rL._SX376_BO1,204,203,200_.jpg",
             "price" : 300,
+            "unitPrice" : 300,
             "category" : "Book",
             "description" : "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees.",
             "quantity": 1
@@ -23,6 +25,7 @@
             "productName" : "Blink Video Doorbell",
             "img" : "https://m.media-amazon.com/images/I/51tR+nCYhIL._SL1000_.jpg",
             "price" : 400,
+            "unitPrice" : 400,
             "category" : "Smart Devices",
             "description" : "Introducing Blink Video Doorbell | Two-way audio, HD video, motion and chime app alerts and Alexa enabled — wired or wire-free (Black)",
             "quantity": 1
@@ -32,6 +35,7 @@
             "productName" : "Vacuum Cleaner",
             "img" : "https://m.media-amazon.com/images/I/71LWZ-H6JQL._AC_SL1500_.jpg",
             "price" : 200,
+            "unitPrice" : 200,
             "category" : "Smart Devices",
             "description" : "Robot Vacuum and Mop, Bagotte 2000Pa Wi-Fi Robotic Vacuum Cleaner, Gyro Navigation with Mapping System",
             "quantity": 1
@@ -41,6 +45,7 @@
             "productName" : "Sony Wireless Headphones",
             "img" : "https://m.media-amazon.com/images/I/71x8gW79x-L._AC_SL1500_.jpg",
             "price" : 250,
+            "unitPrice" : 250,
             "category" : "Electronic",
             "description" : "Sony WH-1000XM4 Wireless Industry Leading Noise Canceling Overhead Headphones with Mic for Phone-Call and Alexa Voice Control",
             "quantity": 1
@@ -50,6 +55,7 @@
             "productName" : "Mama Wooden Toddler Puzzles",
             "img" : "https://m.media-amazon.com/images/I/81RZZT1kVJL._AC_SL1500_.jpg",
             "price" : 20,
+            "unitPrice" : 20,
             "category" : "Kids",
             "description" : "Montessori Mama Wooden Toddler Puzzles for Kids Ages 2-4 | Montessori Toys for Toddlers 2 Years Old | Wooden Puzzles for Toddlers 2-4 Years | 4-Pack Toddler...",
             "quantity": 1

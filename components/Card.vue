@@ -22,7 +22,7 @@
 <script>
 export default {
     name: 'Card',
-    props: ['productName','imgSrc','price','category','desc'],
+    props: ['productName','imgSrc','price','unitPrice','category','desc'],
     data (){
         return{
             

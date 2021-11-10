@@ -10,9 +10,10 @@
       :imgSrc="item.img" 
       :productName="item.productName"
       :price="item.price"
+      :unitPrice="item.unitPrice"
       :desc="item.description"
       :category="item.category"
-      @add="addToList(item.id, item.productName, item.category, item.price, item.quantity)"
+      @add="addToList(item.id, item.productName, item.category, item.price, item.unitPrice, item.quantity)"
       />
     </div>
   </div>
@@ -29,6 +30,7 @@ export default {
         productName: "",
         category: "",
         price: 0,
+        unitPrice : 0,
         quantity: 0
       },
       basket: [],
@@ -36,8 +38,8 @@ export default {
     }
   },
   methods:{
-    addToList(id, name, category, price, quantity){
-      this.card = { id: id, productName: name, category: category, price: price, quantity: quantity }
+    addToList(id, name, category, price, unitPrice, quantity){
+      this.card = { id: id, productName: name, category: category, price: price, unitPrice : unitPrice, quantity: quantity }
       if (this.card.id == 1) {
         let product1 = JSON.stringify(this.card)
         localStorage.setItem('item1',product1)
@@ -62,7 +64,7 @@ export default {
         let product6 = JSON.stringify(this.card)
         localStorage.setItem('item6',product6)
       }
-      this.basket.push({ id: id, productName: name, category: category, price: price, quantity: quantity })
+      this.basket.push({ id: id, productName: name, category: category, price: price, unitPrice : unitPrice, quantity: quantity })
       console.log(this.basket)
     }
   },
