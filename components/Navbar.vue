@@ -16,9 +16,12 @@
                 </NuxtLink>
                 <NuxtLink to="/basket" class="bask" >
                     <a id="basket" href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-#3F3351 mt-4 lg:mt-0">
-                        Basket: <span>{{ productCount }}</span>
+                        Basket
                     </a>
                 </NuxtLink>
+                    <span id="amount" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-#3F3351 mt-4 lg:mt-0">
+                        {{ productCount }}
+                    </span>
             </div>
         </div>
     </nav>
